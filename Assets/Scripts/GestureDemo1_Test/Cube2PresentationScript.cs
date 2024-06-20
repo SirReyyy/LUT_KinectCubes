@@ -30,8 +30,9 @@ public class Cube2PresentationScript : MonoBehaviour
 	private int[] hsides = { 0, 1, 2, 3 };  // left, front, right, back
 	private int[] vsides = { 4, 1, 5, 3};  // up, front, down, back
 	
-	private Cube2GestureListener gestureListener;
-	private Quaternion initialRotation;
+	// private Cube2GestureListener gestureListener;
+    private CubeAllGestureListener gestureListener;
+    private Quaternion initialRotation;
 	private int stepsToGo = 0;
 
 	private float rotationStep;
@@ -65,8 +66,9 @@ public class Cube2PresentationScript : MonoBehaviour
 		}
 
         // get the gestures listener
-		gestureListener = Cube2GestureListener.Instance;
-		Debug.Log("Test:" + gestureListener);
+        // gestureListener = Cube2GestureListener.Instance;
+        gestureListener = CubeAllGestureListener.Instance;
+        Debug.Log("Test 2:" + gestureListener);
     }
 	
 	void Update() 

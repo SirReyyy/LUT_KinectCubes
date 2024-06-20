@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 258460247}
   - component: {fileID: 258460250}
   - component: {fileID: 258460249}
+  - component: {fileID: 258460251}
   m_Layer: 0
   m_Name: KinectController
   m_TagString: Untagged
@@ -568,7 +569,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258460242}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b8a9c303abf5a74bb115cb476a094d2, type: 3}
   m_Name: 
@@ -582,7 +583,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258460242}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4eacd4d046242b042a01d51e118537d1, type: 3}
   m_Name: 
@@ -596,7 +597,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258460242}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e82d484ac2429c64dbf6e4a1e8d6d5e3, type: 3}
   m_Name: 
@@ -610,9 +611,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258460242}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ceae71abbf39c84cbf38151d5dbfe7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIndex: 0
+  gestureInfo: {fileID: 381935580}
+--- !u!114 &258460251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258460242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3982b85692fa7d4fb9e7376605c2b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
@@ -722,8 +737,9 @@ GameObject:
   m_Component:
   - component: {fileID: 419548570}
   - component: {fileID: 419548572}
+  - component: {fileID: 419548573}
   m_Layer: 0
-  m_Name: PresentationCube (2)
+  m_Name: PresentationCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -738,7 +754,7 @@ Transform:
   m_GameObject: {fileID: 419548568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: -4, z: 7.5}
+  m_LocalPosition: {x: 4, y: 4, z: 7.5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -757,7 +773,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419548568}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c2db28814f0ee6448681f1d0504819a, type: 3}
   m_Name: 
@@ -784,6 +800,41 @@ MonoBehaviour:
   - {fileID: 1919241678}
   - {fileID: 1361369110}
   - {fileID: 1028975679}
+--- !u!114 &419548573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419548568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30fb4194686a8a4a9ea2fa4e068616f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenCamera: {fileID: 1833723679}
+  slideChangeWithGestures: 1
+  slideChangeWithKeys: 1
+  spinSpeed: 5
+  slideTextures:
+  - {fileID: 2800000, guid: 785fc37e655432141baab5e7de94b9c2, type: 3}
+  - {fileID: 2800000, guid: a28746d09dc670d46b948c6870ffa042, type: 3}
+  - {fileID: 2800000, guid: 2d7088a74e929e14cb5bf649d4d132ee, type: 3}
+  - {fileID: 2800000, guid: 06362e66e2629cd488f0066020ba64df, type: 3}
+  - {fileID: 2800000, guid: 21d8e5b08e6f8f4438e4562279506376, type: 3}
+  - {fileID: 2800000, guid: 30665ec7cac85d344a00443e8d215ae0, type: 3}
+  - {fileID: 2800000, guid: 370853285efca524e831f089a1ee4599, type: 3}
+  - {fileID: 2800000, guid: f3492dc2f317de84fbe62dbef956604f, type: 3}
+  - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
+  - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
+  cubeSides:
+  - {fileID: 1421545273}
+  - {fileID: 1734364388}
+  - {fileID: 1929242213}
+  - {fileID: 663744462}
+  - {fileID: 860882694}
+  - {fileID: 1290484850}
+  cubeId: 2
 --- !u!1 &549424573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,8 +1631,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1125614585}
   - component: {fileID: 1125614587}
+  - component: {fileID: 1125614588}
   m_Layer: 0
-  m_Name: PresentationCube (4)
+  m_Name: PresentationCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1596,7 +1648,7 @@ Transform:
   m_GameObject: {fileID: 1125614583}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 4, z: 7.5}
+  m_LocalPosition: {x: 4, y: -4, z: 7.5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1615,7 +1667,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125614583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b9772cfa47977b4daeb52e4ba822451, type: 3}
   m_Name: 
@@ -1642,6 +1694,41 @@ MonoBehaviour:
   - {fileID: 1946769069}
   - {fileID: 1920703632}
   - {fileID: 2005140071}
+--- !u!114 &1125614588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125614583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30fb4194686a8a4a9ea2fa4e068616f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenCamera: {fileID: 1833723679}
+  slideChangeWithGestures: 1
+  slideChangeWithKeys: 1
+  spinSpeed: 5
+  slideTextures:
+  - {fileID: 2800000, guid: 785fc37e655432141baab5e7de94b9c2, type: 3}
+  - {fileID: 2800000, guid: a28746d09dc670d46b948c6870ffa042, type: 3}
+  - {fileID: 2800000, guid: 2d7088a74e929e14cb5bf649d4d132ee, type: 3}
+  - {fileID: 2800000, guid: 06362e66e2629cd488f0066020ba64df, type: 3}
+  - {fileID: 2800000, guid: 21d8e5b08e6f8f4438e4562279506376, type: 3}
+  - {fileID: 2800000, guid: 30665ec7cac85d344a00443e8d215ae0, type: 3}
+  - {fileID: 2800000, guid: 370853285efca524e831f089a1ee4599, type: 3}
+  - {fileID: 2800000, guid: f3492dc2f317de84fbe62dbef956604f, type: 3}
+  - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
+  - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
+  cubeSides:
+  - {fileID: 1421545273}
+  - {fileID: 1734364388}
+  - {fileID: 1929242213}
+  - {fileID: 663744462}
+  - {fileID: 860882694}
+  - {fileID: 1290484850}
+  cubeId: 4
 --- !u!1 &1290484850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,8 +1845,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1349565154}
   - component: {fileID: 1349565156}
+  - component: {fileID: 1349565157}
   m_Layer: 0
-  m_Name: PresentationCube (1)
+  m_Name: PresentationCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1793,7 +1881,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349565152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99e31dc139015e24d9c9052f3cbccb33, type: 3}
   m_Name: 
@@ -1820,6 +1908,41 @@ MonoBehaviour:
   - {fileID: 663744462}
   - {fileID: 860882694}
   - {fileID: 1290484850}
+--- !u!114 &1349565157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349565152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30fb4194686a8a4a9ea2fa4e068616f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenCamera: {fileID: 1833723679}
+  slideChangeWithGestures: 1
+  slideChangeWithKeys: 1
+  spinSpeed: 5
+  slideTextures:
+  - {fileID: 2800000, guid: 785fc37e655432141baab5e7de94b9c2, type: 3}
+  - {fileID: 2800000, guid: a28746d09dc670d46b948c6870ffa042, type: 3}
+  - {fileID: 2800000, guid: 2d7088a74e929e14cb5bf649d4d132ee, type: 3}
+  - {fileID: 2800000, guid: 06362e66e2629cd488f0066020ba64df, type: 3}
+  - {fileID: 2800000, guid: 21d8e5b08e6f8f4438e4562279506376, type: 3}
+  - {fileID: 2800000, guid: 30665ec7cac85d344a00443e8d215ae0, type: 3}
+  - {fileID: 2800000, guid: 370853285efca524e831f089a1ee4599, type: 3}
+  - {fileID: 2800000, guid: f3492dc2f317de84fbe62dbef956604f, type: 3}
+  - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
+  - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
+  cubeSides:
+  - {fileID: 1421545273}
+  - {fileID: 1734364388}
+  - {fileID: 1929242213}
+  - {fileID: 663744462}
+  - {fileID: 860882694}
+  - {fileID: 1290484850}
+  cubeId: 1
 --- !u!1 &1361369110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,8 +2902,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1853694564}
   - component: {fileID: 1853694565}
+  - component: {fileID: 1853694566}
   m_Layer: 0
-  m_Name: PresentationCube (3)
+  m_Name: PresentationCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2814,7 +2938,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853694562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba9f38544527b52459a081272c4324b1, type: 3}
   m_Name: 
@@ -2841,6 +2965,41 @@ MonoBehaviour:
   - {fileID: 1485186180}
   - {fileID: 625410046}
   - {fileID: 30903441}
+--- !u!114 &1853694566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853694562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30fb4194686a8a4a9ea2fa4e068616f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenCamera: {fileID: 1833723679}
+  slideChangeWithGestures: 1
+  slideChangeWithKeys: 1
+  spinSpeed: 5
+  slideTextures:
+  - {fileID: 2800000, guid: 785fc37e655432141baab5e7de94b9c2, type: 3}
+  - {fileID: 2800000, guid: a28746d09dc670d46b948c6870ffa042, type: 3}
+  - {fileID: 2800000, guid: 2d7088a74e929e14cb5bf649d4d132ee, type: 3}
+  - {fileID: 2800000, guid: 06362e66e2629cd488f0066020ba64df, type: 3}
+  - {fileID: 2800000, guid: 21d8e5b08e6f8f4438e4562279506376, type: 3}
+  - {fileID: 2800000, guid: 30665ec7cac85d344a00443e8d215ae0, type: 3}
+  - {fileID: 2800000, guid: 370853285efca524e831f089a1ee4599, type: 3}
+  - {fileID: 2800000, guid: f3492dc2f317de84fbe62dbef956604f, type: 3}
+  - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
+  - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
+  cubeSides:
+  - {fileID: 1421545273}
+  - {fileID: 1734364388}
+  - {fileID: 1929242213}
+  - {fileID: 663744462}
+  - {fileID: 860882694}
+  - {fileID: 1290484850}
+  cubeId: 3
 --- !u!1 &1883923729
 GameObject:
   m_ObjectHideFlags: 0
