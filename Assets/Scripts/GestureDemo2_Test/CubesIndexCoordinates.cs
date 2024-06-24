@@ -11,7 +11,7 @@ public class CubesIndexCoordinates : MonoBehaviour
     public int rows = 4; // Number of rows
     public int cols = 4; // Number of columns
 
-    void Start() {
+    void Awake() {
         IdentifyInGrid();
     } //-- start end
 
@@ -40,7 +40,7 @@ public class CubesIndexCoordinates : MonoBehaviour
             cubeIndexScript = transform.GetChild(i).GetComponent<CubesIndexScript>();
             if(cubeIndexScript != null ) {
                 cubeIndexScript.cubeId = rowStr + colStr;
-                transform.GetChild(i).AddComponent<CubesIndexListener>();
+                // transform.GetChild(i).AddComponent<CubesIndexListener>();
                 // Debug.Log(cubeIndexScript.cubeId);
             }
         }

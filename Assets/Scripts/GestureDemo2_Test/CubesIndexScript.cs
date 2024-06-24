@@ -81,8 +81,9 @@ public class CubesIndexScript : MonoBehaviour
         }
 
         // get the gestures listener
-        gestureListener = CubesIndexListener.Instance;
-        // Debug.Log("Cubes Index Test:" + cubeId + gestureListener);
+        // gestureListener = CubesIndexListener.Instance;
+        gestureListener = gameObject.GetComponent<CubesIndexListener>();
+        Debug.Log("Cubes Index Test:" + cubeId + gestureListener);
     }
 
     void Update()

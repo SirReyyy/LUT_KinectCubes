@@ -33,11 +33,11 @@ public class CubesIndexListener : MonoBehaviour, KinectGestures.GestureListenerI
     {
 		get
 		{
-			// Debug.Log(instance);
-			return instance;
+            // Debug.Log(instance);
+
+            return instance;
 		}
 	}
-
 
     /// <summary>
     /// Determines whether swipe left is detected.

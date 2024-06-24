@@ -15,8 +15,8 @@ public class CubeAllGestureListener : MonoBehaviour, KinectGestures.GestureListe
 	// singleton instance of the class
 	private static CubeAllGestureListener instance = null;
     private Dictionary<string, CubeAllScript> cubeAllScriptsDict = new Dictionary<string, CubeAllScript>();
-	private CubeAllScript[] cubeAllScriptsArray = null;
-	private List<CubeAllScript> cubeAllScriptList = new List<CubeAllScript>();
+	// private CubeAllScript[] cubeAllScriptsArray = null;
+	// private List<CubeAllScript> cubeAllScriptList = new List<CubeAllScript>();
 
     // internal variables to track if progress message has been displayed
     private bool progressDisplayed;
