@@ -2,24 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CubesIndexCoordinates : MonoBehaviour
 {
-    public CubesIndexListener[] cubesIndexListeners;
     private CubesIndexScript cubeIndexScript;
 
     public int rows = 4; // Number of rows
     public int cols = 4; // Number of columns
+    
 
     void Awake() {
         IdentifyInGrid();
     } //-- start end
-
-
-    void Update() {
-        
-    } //-- Update end
-
 
     void IdentifyInGrid() {
         int childCount = transform.childCount;
@@ -33,18 +28,20 @@ public class CubesIndexCoordinates : MonoBehaviour
         {
             // Calculate row and column
             int row = i / cols;
-            string rowStr = row.ToString();
             int col = i % cols;
-            string colStr = col.ToString();
 
             cubeIndexScript = transform.GetChild(i).GetComponent<CubesIndexScript>();
             if(cubeIndexScript != null ) {
-                cubeIndexScript.cubeId = rowStr + colStr;
+                // cubeIndexScript.cubeId = rowStr + colStr;
+                cubeIndexScript.cubeRowId = row;
+                cubeIndexScript.cubeColId = col;
+
                 // transform.GetChild(i).AddComponent<CubesIndexListener>();
                 // Debug.Log(cubeIndexScript.cubeId);
             }
         }
     } //-- IdentifyInGrid end
+
 
 } //-- class end
 

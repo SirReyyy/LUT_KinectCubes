@@ -23,13 +23,14 @@ public class CubesIndexListener : MonoBehaviour, KinectGestures.GestureListenerI
 	private bool swipeLeft = false;
 	private bool swipeRight = false;
 	private bool swipeUp = false;
-	
+    private bool swipeDown = false;
 
-	/// <summary>
-	/// Gets the singleton CubeGestureListener instance.
-	/// </summary>
-	/// <value>The CubeGestureListener instance.</value>
-	public static CubesIndexListener Instance
+
+    /// <summary>
+    /// Gets the singleton CubeGestureListener instance.
+    /// </summary>
+    /// <value>The CubeGestureListener instance.</value>
+    public static CubesIndexListener Instance
     {
 		get
 		{
@@ -83,14 +84,25 @@ public class CubesIndexListener : MonoBehaviour, KinectGestures.GestureListenerI
 		
 		return false;
 	}
-	
 
-	/// <summary>
-	/// Invoked when a new user is detected. Here you can start gesture tracking by invoking KinectManager.DetectGesture()-function.
-	/// </summary>
-	/// <param name="userId">User ID</param>
-	/// <param name="userIndex">User index</param>
-	public void UserDetected(long userId, int userIndex)
+    public bool IsSwipeDown()
+    {
+        if (swipeDown)
+        {
+            swipeDown = false;
+            return true;
+        }
+
+        return false;
+    }
+
+
+    /// <summary>
+    /// Invoked when a new user is detected. Here you can start gesture tracking by invoking KinectManager.DetectGesture()-function.
+    /// </summary>
+    /// <param name="userId">User ID</param>
+    /// <param name="userIndex">User index</param>
+    public void UserDetected(long userId, int userIndex)
 	{
 		// the gestures are allowed for the primary user only
 		KinectManager manager = KinectManager.Instance;

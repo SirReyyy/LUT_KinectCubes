@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using System;
+using Unity.VisualScripting;
 
 public class CubesIndexScript : MonoBehaviour
 {
@@ -30,8 +32,13 @@ public class CubesIndexScript : MonoBehaviour
     private int[] hsides = { 0, 1, 2, 3 };  // left, front, right, back
     private int[] vsides = { 4, 1, 5, 3 };  // up, front, down, back
 
-    public string cubeId; //
+    // public string cubeId; //
+    public int cubeRowId, cubeColId;
+    public int cubeRowStart = 0, cubeColStart = 0;
+    public int cubeRowEnd, cubeColEnd;
+
     private CubesIndexListener gestureListener;
+    private CubesIndexCoordinates indexCoordinates;
     private Quaternion initialRotation;
     private int stepsToGo = 0;
 
@@ -81,9 +88,11 @@ public class CubesIndexScript : MonoBehaviour
         }
 
         // get the gestures listener
-        // gestureListener = CubesIndexListener.Instance;
         gestureListener = gameObject.GetComponent<CubesIndexListener>();
-        Debug.Log("Cubes Index Test:" + cubeId + gestureListener);
+        indexCoordinates = gameObject.GetComponentInParent<CubesIndexCoordinates>();
+
+        cubeRowEnd = indexCoordinates.rows;
+        cubeColEnd = indexCoordinates.cols;
     }
 
     void Update()
@@ -91,6 +100,22 @@ public class CubesIndexScript : MonoBehaviour
         // dont run Update() if there is no gesture listener
         if (!gestureListener)
             return;
+
+        // ----
+        if (!isSpinning)
+        {
+            if (Input.GetKey(KeyCode.A)) {
+                StartCoroutine(LeftMarquee());
+            } else if (Input.GetKey(KeyCode.D)) {
+                StartCoroutine(RightMarquee());
+            } else if (Input.GetKey(KeyCode.W)) {
+                StartCoroutine(UpMarquee());
+            } else if (Input.GetKey(KeyCode.S)) {
+                StartCoroutine(DownMarquee());
+            }
+        }
+        
+        // ----
 
         if (!isSpinning)
         {
@@ -105,11 +130,17 @@ public class CubesIndexScript : MonoBehaviour
             if (slideChangeWithGestures && gestureListener)
             {
                 if (gestureListener.IsSwipeLeft())
-                    RotateLeft();
+                    StartCoroutine(LeftMarquee()); 
+                    // RotateLeft();
                 else if (gestureListener.IsSwipeRight())
-                    RotateRight();
+                    StartCoroutine(RightMarquee());
+                    // RotateRight();
                 else if (gestureListener.IsSwipeUp())
-                    RotateUp();
+                    StartCoroutine(UpMarquee());
+                    // RotateUp();
+                else if (gestureListener.IsSwipeDown())
+                    StartCoroutine(DownMarquee());
+                // RotateUp();
             }
         }
         else
@@ -225,6 +256,34 @@ public class CubesIndexScript : MonoBehaviour
         //nextStepTime = 0f;
     }
 
+    private void RotateDown()
+    {
+        // set the previous texture slide
+        tex = (tex - 1 + maxTextures) % maxTextures;
+
+        // rotate vsides up
+        SetSides(ref vsides, vsides[3], vsides[0], vsides[1], vsides[2]);
+        SetSides(ref hsides, -1, vsides[1], -1, vsides[2]);
+        side = hsides[1];
+
+        // set the slide on the selected side
+        if (side < cubeSides.Count && cubeSides[side] && cubeSides[side].GetComponent<Renderer>())
+        {
+            cubeSides[side].GetComponent<Renderer>().material.mainTexture = slideTextures[tex];
+        }
+
+        // rotate the presentation
+        isSpinning = true;
+        initialRotation = screenCamera ? Quaternion.Inverse(screenCamera.transform.rotation) * transform.rotation : transform.rotation;
+
+        rotationStep = -spinSpeed; // new Vector3(spinSpeed, 0, 0);
+        rotationAxis = Vector3.right;
+
+        stepsToGo = 90 / spinSpeed;
+        //nextStepTime = 0f;
+    }
+
+
     // sets values of sides' array
     private void SetSides(ref int[] sides, int v0, int v1, int v2, int v3)
     {
@@ -246,6 +305,49 @@ public class CubesIndexScript : MonoBehaviour
         if (v3 >= 0)
         {
             sides[3] = v3;
+        }
+    }
+
+
+    //-- IEnumerators for each direction
+
+    public IEnumerator LeftMarquee() {
+        for (int index = cubeColEnd; index >= cubeColStart; index--)
+        {
+            if (cubeColId == index)
+                RotateLeft();
+
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    public IEnumerator RightMarquee() {
+        for (int index = cubeColStart; index <= cubeColEnd; index++)
+        {
+            if( cubeColId == index)
+                RotateRight();
+
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    public IEnumerator UpMarquee() {
+        for (int index = cubeRowStart; index <= cubeRowEnd; index++)
+        {
+            if (cubeRowId == index)
+                RotateUp();
+
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    public IEnumerator DownMarquee() {
+        for (int index = cubeRowEnd; index >= cubeRowStart; index--)
+        {
+            if (cubeRowId == index)
+                RotateDown();
+
+            yield return new WaitForSeconds(1);
         }
     }
 
