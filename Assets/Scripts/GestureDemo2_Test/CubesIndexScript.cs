@@ -100,23 +100,7 @@ public class CubesIndexScript : MonoBehaviour
         // dont run Update() if there is no gesture listener
         if (!gestureListener)
             return;
-
-        // ----
-        if (!isSpinning)
-        {
-            if (Input.GetKey(KeyCode.A)) {
-                StartCoroutine(LeftMarquee());
-            } else if (Input.GetKey(KeyCode.D)) {
-                StartCoroutine(RightMarquee());
-            } else if (Input.GetKey(KeyCode.W)) {
-                StartCoroutine(UpMarquee());
-            } else if (Input.GetKey(KeyCode.S)) {
-                StartCoroutine(DownMarquee());
-            }
-        }
         
-        // ----
-
         if (!isSpinning)
         {
             if (slideChangeWithKeys)
@@ -192,7 +176,7 @@ public class CubesIndexScript : MonoBehaviour
 
         rotationStep = spinSpeed; // new Vector3(0, spinSpeed, 0);
         rotationAxis = Vector3.up;
-
+        
         stepsToGo = 90 / spinSpeed;
         //nextStepTime = 0f;
     }
@@ -332,7 +316,7 @@ public class CubesIndexScript : MonoBehaviour
     }
 
     public IEnumerator UpMarquee() {
-        for (int index = cubeRowStart; index <= cubeRowEnd; index++)
+        for (int index = cubeRowEnd; index >= cubeRowStart; index--)
         {
             if (cubeRowId == index)
                 RotateUp();
@@ -342,7 +326,7 @@ public class CubesIndexScript : MonoBehaviour
     }
 
     public IEnumerator DownMarquee() {
-        for (int index = cubeRowEnd; index >= cubeRowStart; index--)
+        for (int index = cubeRowStart; index <= cubeRowEnd; index++)
         {
             if (cubeRowId == index)
                 RotateDown();

@@ -186,7 +186,7 @@ MonoBehaviour:
   avatarControllers: []
   playerCalibrationPose: 0
   playerCommonGestures: 
-  minTimeBetweenGestures: 0.7
+  minTimeBetweenGestures: 5
   gestureManager: {fileID: 0}
   gestureListeners: []
   calibrationText: {fileID: 900750676}
@@ -2053,7 +2053,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &782471448711098826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3547,7 +3552,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &1830856871098044395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3653,7 +3663,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &1848423155110585733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5543,7 +5558,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &3393586289010129282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6922,7 +6942,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &4509394029246188371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7907,7 +7932,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &5539020857440547238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8508,7 +8538,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &6098280943705332593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9548,7 +9583,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &7137065429477424344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9936,7 +9976,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &7402656937416468195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10419,7 +10464,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &7599659519933940257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10701,7 +10751,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &7831415334050823376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10897,7 +10952,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &7935625986816438564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11047,7 +11107,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &8001379947537665523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11227,7 +11292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0bc72b03799f24390c371b04abce70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubesIndexListeners: []
   rows: 4
   cols: 4
 --- !u!64 &8093940142280594460
@@ -11322,7 +11386,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &8136505016592304019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12026,7 +12095,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &8783332859481318975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12204,7 +12278,12 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4a49b736c69efb54baeca15ea2ccfa3f, type: 3}
   - {fileID: 2800000, guid: b3594a9e08c5d8145a9c1df13469493b, type: 3}
   cubeSides: []
-  cubeId: 
+  cubeRowId: 0
+  cubeColId: 0
+  cubeRowStart: 0
+  cubeColStart: 0
+  cubeRowEnd: 0
+  cubeColEnd: 0
 --- !u!114 &8876535167024243052
 MonoBehaviour:
   m_ObjectHideFlags: 0
