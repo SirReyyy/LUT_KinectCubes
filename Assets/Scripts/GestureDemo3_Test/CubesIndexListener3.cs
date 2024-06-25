@@ -217,8 +217,8 @@ public class CubesIndexListener3 : MonoBehaviour, KinectGestures.GestureListener
 			swipeLeft = true;
 		else if(gesture == KinectGestures.Gestures.SwipeRight)
 			swipeRight = true;
-		else if(gesture == KinectGestures.Gestures.SwipeUp)
-			swipeUp = true;
+		// else if(gesture == KinectGestures.Gestures.SwipeUp)
+		//	swipeUp = true;
 
 		return true;
 	}

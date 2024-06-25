@@ -115,17 +115,13 @@ public class CubesIndexScript3 : MonoBehaviour
             if (slideChangeWithGestures && gestureListener)
             {
                 if (gestureListener.IsSwipeLeft())
-                    StartCoroutine(LeftMarquee()); 
-                    // RotateLeft();
+                    StartCoroutine(LeftMarquee());
                 else if (gestureListener.IsSwipeRight())
                     StartCoroutine(RightMarquee());
-                    // RotateRight();
-                else if (gestureListener.IsSwipeUp())
-                    StartCoroutine(UpMarquee());
-                    // RotateUp();
-                else if (gestureListener.IsSwipeDown())
-                    StartCoroutine(DownMarquee());
-                // RotateUp();
+                // else if (gestureListener.IsSwipeUp())
+                    // StartCoroutine(UpMarquee());
+                // else if (gestureListener.IsSwipeDown())
+                    // StartCoroutine(DownMarquee());
             }
         }
         else

@@ -15,8 +15,8 @@ public class CubesIndexCoordinates3 : MonoBehaviour
     Texture cutTexture;
 
 
-    public int rows = 5; // Number of rows
-    public int cols = 8; // Number of columns
+    public int rows = 15; // Number of rows
+    public int cols = 20; // Number of columns
 
     void Awake() {
         SpawnCubes();
@@ -24,13 +24,13 @@ public class CubesIndexCoordinates3 : MonoBehaviour
 
     void Start() {
         IdentifyInGrid();
-        DivideTexture(mainTextures[0]);
+        DivideTextureLoop();
     } //-- Start end
 
     private void SpawnCubes()
     {
-        float xSpacing = 12f / cols;  // Calculate the spacing between cubes along x-axis
-        float ySpacing = 8f / rows;   // Calculate the spacing between cubes along y-axis
+        float xSpacing = 16f / cols;  // Calculate the spacing between cubes along x-axis
+        float ySpacing = 10f / rows;   // Calculate the spacing between cubes along y-axis
 
         float minSpacing = Mathf.Min(xSpacing, ySpacing); // Find the minimum spacing between rows and columns
 
@@ -41,8 +41,8 @@ public class CubesIndexCoordinates3 : MonoBehaviour
         {
             for (int col = 0; col < cols; col++)
             {
-                float xPos = -6f + xSpacing * col + xSpacing / 2f; // Calculate the x position of the cube
-                float yPos = 4f - ySpacing * row - ySpacing / 2f; // Calculate the y position of the cube
+                float xPos = -8f + xSpacing * col + xSpacing / 2f; // Calculate the x position of the cube
+                float yPos = 5f - ySpacing * row - ySpacing / 2f; // Calculate the y position of the cube
 
                 Vector3 position = new Vector3(xPos, yPos, 0f);
                 cubeInstance = Instantiate(cubePrefabs, position, Quaternion.identity);
@@ -113,6 +113,7 @@ public class CubesIndexCoordinates3 : MonoBehaviour
             }
         }
 
+        dividedTextures.Clear();
         RenderTexture.ReleaseTemporary(tempRT);
     }
 
