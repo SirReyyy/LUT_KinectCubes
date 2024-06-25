@@ -1014,9 +1014,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2913c2ff3c358b647a2e4e24cd938c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubePrefabs: {fileID: 7188933868603852055, guid: c0a5283b4192f0342b8e02a3e06ac203, type: 3}
-  rows: 10
-  cols: 7
+  cubePrefabs: {fileID: 5708928401240341823, guid: 2782a63fd25d9db4cb07d150821be827, type: 3}
+  mainTextures:
+  - {fileID: 2800000, guid: ce4e451d0a698d846a217a3c79fca218, type: 3}
+  - {fileID: 2800000, guid: e09659854af5fc14fb44891b0e8d015b, type: 3}
+  - {fileID: 2800000, guid: eccb2cd3b8f6a074cbcef97a19b8ba6c, type: 3}
+  - {fileID: 2800000, guid: a59877299cd7fbf4ca9ffbcfef60a2b1, type: 3}
+  - {fileID: 2800000, guid: c0363b822cfc93f438fba5c799e8fb49, type: 3}
+  - {fileID: 2800000, guid: e5f2cc1f597f8c84c97a611f5f7203d4, type: 3}
+  dividedTextures: []
+  rows: 5
+  cols: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

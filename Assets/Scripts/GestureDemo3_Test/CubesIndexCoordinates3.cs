@@ -10,8 +10,13 @@ public class CubesIndexCoordinates3 : MonoBehaviour
     public GameObject cubePrefabs;
     private GameObject cubeInstance;
 
-    public int rows = 4; // Number of rows
-    public int cols = 4; // Number of columns
+    public List<Texture2D> mainTextures;
+    public List<Texture> dividedTextures = new List<Texture>();
+    Texture cutTexture;
+
+
+    public int rows = 5; // Number of rows
+    public int cols = 8; // Number of columns
 
     void Awake() {
         SpawnCubes();
@@ -19,16 +24,8 @@ public class CubesIndexCoordinates3 : MonoBehaviour
 
     void Start() {
         IdentifyInGrid();
+        DivideTexture(mainTextures[0]);
     } //-- Start end
-
-    private void SpawnCubes2() {
-        int totalCubes = rows * cols;
-
-        for (int i = 0; i < totalCubes; i++) {
-            cubeInstance = Instantiate(cubePrefabs);
-            cubeInstance.transform.parent = transform;
-        }
-    } //--- SpawnCubes end
 
     private void SpawnCubes()
     {
@@ -56,10 +53,6 @@ public class CubesIndexCoordinates3 : MonoBehaviour
     }
 
 
-
-
-
-
     private void IdentifyInGrid() {
         int childCount = transform.childCount;
         if (childCount != rows * cols)
@@ -76,17 +69,61 @@ public class CubesIndexCoordinates3 : MonoBehaviour
 
             cubeIndexScript = transform.GetChild(i).GetComponent<CubesIndexScript3>();
             if(cubeIndexScript != null ) {
-                // cubeIndexScript.cubeId = rowStr + colStr;
                 cubeIndexScript.cubeRowId = row;
                 cubeIndexScript.cubeColId = col;
-
-                // transform.GetChild(i).AddComponent<CubesIndexListener>();
-                // Debug.Log(cubeIndexScript.cubeId);
             }
         }
     } //-- IdentifyInGrid end
 
+    
+    private void DivideTextureLoop() {
+        for (int t = 0; t < mainTextures.Count; t++) {
+            DivideTexture(mainTextures[t]);
+        }
+    }
 
+    public void DivideTexture(Texture2D originalTexture)
+    {
+        int width = originalTexture.width / cols;
+        int height = originalTexture.height / rows;
+
+        // Ensure the originalTexture is readable
+        RenderTexture tempRT = RenderTexture.GetTemporary(
+            originalTexture.width,
+            originalTexture.height,
+            0,
+            RenderTextureFormat.Default,
+            RenderTextureReadWrite.Linear
+        );
+
+        Graphics.Blit(originalTexture, tempRT);
+
+        for (int y = 0; y < rows; y++)
+        {
+            for (int x = 0; x < cols; x++)
+            {
+                Rect rect = new Rect(x * width, y * height, width, height);
+                Texture2D newTexture = CreateTexture(tempRT, rect);
+                dividedTextures.Add(newTexture);
+                
+                int index = dividedTextures.Count - 1;
+                cubeIndexScript = transform.GetChild(index).GetComponent<CubesIndexScript3>();
+                cubeIndexScript.slideTextures.Add(newTexture);
+
+            }
+        }
+
+        RenderTexture.ReleaseTemporary(tempRT);
+    }
+
+    private Texture2D CreateTexture(RenderTexture renderTexture, Rect rect)
+    {
+        Texture2D newTexture = new Texture2D((int)rect.width, (int)rect.height);
+        RenderTexture.active = renderTexture;
+        newTexture.ReadPixels(rect, 0, 0);
+        newTexture.Apply();
+        return newTexture;
+    }
 } //-- class end
 
 

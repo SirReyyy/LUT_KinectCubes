@@ -18,7 +18,7 @@ public class CubesIndexScript3 : MonoBehaviour
     public int spinSpeed = 5;
 
     [Tooltip("List of the presentation slides.")]
-    public List<Texture> slideTextures;
+    public List<Texture2D> slideTextures;
     [Tooltip("List of the side planes, comprising the presentation cube.")]
     public List<GameObject> cubeSides;
 
