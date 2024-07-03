@@ -30,7 +30,7 @@ public class CoinsIndexCoordinates : MonoBehaviour
 
         float scaleFactor = minSpacing * 0.8f; // Calculate the scale factor for proper separation
         float scaleFactorY = scaleFactor * 0.05f;
-        Vector3 cubeScale = new Vector3(scaleFactor, scaleFactorY, scaleFactor); // Set the cube scale
+        Vector3 coinScale = new Vector3(scaleFactor, scaleFactorY, scaleFactor); // Set the cube scale
 
         for (int row = 0; row < rows; row++)
         {
@@ -42,7 +42,7 @@ public class CoinsIndexCoordinates : MonoBehaviour
                 Vector3 position = new Vector3(xPos, yPos, 0f);
                 coinInstance = Instantiate(coinPrefabs, position, Quaternion.Euler(90, 0, 0));
                 coinInstance.transform.parent = transform;
-                coinInstance.transform.localScale = cubeScale; // Set the cube scale
+                coinInstance.transform.localScale = coinScale; // Set the cube scale
             }
         }
     }

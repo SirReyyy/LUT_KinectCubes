@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefabs: {fileID: 3202453688093254995, guid: 55ace0a39265a1d4186af7af22170de7, type: 3}
-  rows: 15
+  rows: 20
   cols: 30
 --- !u!1 &549424573
 GameObject:
