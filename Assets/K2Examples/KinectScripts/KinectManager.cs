@@ -2421,7 +2421,7 @@ public class KinectManager : MonoBehaviour
     // KinectManager's Internal Methods
 
 
-    void Awake()
+    void Start() // Awake
 	{
 		// set the singleton instance
 		//instance = this;

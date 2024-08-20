@@ -53,6 +53,8 @@ public class CoinsIndexScript : MonoBehaviour
 
         coinRowEnd = indexCoordinates.rows;
         coinColEnd = indexCoordinates.cols;
+
+        ChangeColor();
     }
 
     void Update()
@@ -111,6 +113,7 @@ public class CoinsIndexScript : MonoBehaviour
     // rotates cube left
     private void RotateLeft()
     {
+        ChangeColor();
         Debug.Log("Rotate Left");
         
         // rotate the presentation
@@ -127,6 +130,7 @@ public class CoinsIndexScript : MonoBehaviour
     // rotates cube right
     private void RotateRight()
     {
+        ChangeColor();
         Debug.Log("Rotate Right");
 
         // rotate the presentation
@@ -143,6 +147,7 @@ public class CoinsIndexScript : MonoBehaviour
     // rotates cube up
     private void RotateUp()
     {
+        ChangeColor();
         Debug.Log("Rotate Up");
 
         // rotate the presentation
@@ -158,6 +163,7 @@ public class CoinsIndexScript : MonoBehaviour
 
     private void RotateDown()
     {
+        ChangeColor();
         Debug.Log("Rotate Down");
 
         // rotate the presentation

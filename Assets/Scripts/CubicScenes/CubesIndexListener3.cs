@@ -11,7 +11,7 @@ public class CubesIndexListener3 : MonoBehaviour, KinectGestures.GestureListener
 	public int playerIndex = 0;
 
 	[Tooltip("UI-Text to display gesture-listener messages and gesture information.")]
-	public UnityEngine.UI.Text gestureInfo;
+	public Text gestureInfo;
 
 	// singleton instance of the class
 	private static CubesIndexListener3 instance = null;

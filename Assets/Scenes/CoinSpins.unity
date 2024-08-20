@@ -186,7 +186,7 @@ MonoBehaviour:
   avatarControllers: []
   playerCalibrationPose: 0
   playerCommonGestures: 00000000
-  minTimeBetweenGestures: 10
+  minTimeBetweenGestures: 20
   gestureManager: {fileID: 0}
   gestureListeners: []
   calibrationText: {fileID: 900750676}
